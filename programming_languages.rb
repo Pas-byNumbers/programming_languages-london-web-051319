@@ -1,15 +1,10 @@
-def reformat_languages(languages)
-  new_hash = {}
-
-  languages.each do |style, lang|
-    languages[style].each do |language, type|
-      new_hash[language] = {}
+h = {}
+languages.each do |k, v| # oo or func
+    v.each do |k1, v1| # ruby/python
+        if h[k1]
+            h[k1][:style] << k
+        else
+            h[k1] = {type: v1[:type], style: [k]}
+        end
     end
-  end
-  
-  new_hash.each do |language, val|
-    language[type] = ""
-    language[style] = ""
-  end
-  new_hash
 end
