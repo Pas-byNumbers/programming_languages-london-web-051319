@@ -1,13 +1,13 @@
 def reformat_languages(languages)
-h = {}
+new_h = {}
 languages.each do |k, v| # oo or func
     v.each do |k1, v1| # ruby/python
-        if h[k1]
-            h[k1][:style] << k
+        if new_h[k1]
+            new_h[k1][:style] << k
         else
-            h[k1] = {type: v1[:type], style: [k]}
+            new_h[k1] = {type: v1[:type], style: [k]}
         end
     end
 end
-return h
+return new_h
 end
