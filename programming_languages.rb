@@ -1,6 +1,6 @@
 def reformat_languages(languages)
-  @new_hash = Hash.new
-  languages.each do | x |
-    @new_hash[x["id"]] = x["name"]
+  new_hash = Hash.new
+  languages.each do |list, lang|
+    
   end
 end
